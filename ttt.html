@@ -14,16 +14,19 @@
         }
 
         .header {
-            background-image: url('https://github.com/ero87/wedding/raw/main/Alen.jpg');
-            background-size: cover;
-            background-position: left center;
-            background-repeat: no-repeat;
-            width: 100%;
-            height: 300px;
-            color: white;
-            text-align: center;
-            position: relative;
-            padding-top: 250px; /* Default padding for larger screens */
+                background-image: url('https://github.com/ero87/wedding/raw/main/Alen.jpg'); /* Replace with your header image URL */
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 300px;
+    color: white;
+    text-align: center;
+    position: relative;
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Align items in column direction */
+    justify-content: flex-end; /* Align items at the bottom */
+    padding: 20px; /* Add padding if needed */
         }
 
         .header h1 {
@@ -78,9 +81,9 @@
         /* Move down the content for mobile devices */
         @media (max-width: 600px) {
             .header {
-                height: 200px; /* Adjust height for mobile */
-                padding-top: 100px; /* Move content further down for mobile */
-                background-position: left center;
+                height: 400px; /* Increase the height for mobile */
+                padding-top: 250px; /* Move content further down */
+                background-position: center;
             }
 
             .header h1 {
