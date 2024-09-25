@@ -14,16 +14,16 @@
         }
 
         .header {
-            background-image: url('https://github.com/ero87/wedding/raw/main/Alen.jpg'); /* Replace with your header image URL */
+            background-image: url('https://github.com/ero87/wedding/raw/main/Alen.jpg');
             background-size: cover;
-            background-position: left center; /* Align the image more to the left */
+            background-position: left center;
             background-repeat: no-repeat;
             width: 100%;
             height: 300px;
             color: white;
             text-align: center;
             position: relative;
-            padding-top: 350px; /* Moves the content down */
+            padding-top: 150px; /* Default padding for larger screens */
         }
 
         .header h1 {
@@ -34,13 +34,13 @@
         }
 
         .invitation {
-            background-color: rgba(255, 255, 255, 0.9); /* Light white background with transparency */
+            background-color: rgba(255, 255, 255, 0.9);
             padding: 20px;
             border-radius: 10px;
             width: 80%;
             max-width: 600px;
-            margin: 0 auto 20px; /* Remove negative margin to avoid overlapping */
-            margin-top: 30px; /* Space between header and the content */
+            margin: 0 auto 20px;
+            margin-top: 30px;
             box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
         }
 
@@ -75,28 +75,28 @@
             background-color: #d07d7d;
         }
 
-        /* Responsive styles for mobile */
+        /* Move down the content for mobile devices */
         @media (max-width: 600px) {
             .header {
-                height: 200px; /* Adjust height for smaller screens */
-                padding-top: 100px; /* Adjust padding for mobile */
-                background-position: left center; /* Image aligned left on mobile */
+                height: 200px; /* Adjust height for mobile */
+                padding-top: 100px; /* Move content further down for mobile */
+                background-position: left center;
             }
 
             .header h1 {
-                font-size: 2.5em; /* Smaller font size on mobile */
+                font-size: 2em; /* Smaller font size on mobile */
             }
 
             .invitation {
-                width: 90%; /* Adjust width for better mobile display */
+                width: 90%;
             }
 
             .invitation p {
-                font-size: 1em; /* Adjust text size for mobile */
+                font-size: 1em;
             }
 
             #countdown {
-                font-size: 1.3em; /* Adjust countdown font size */
+                font-size: 1.3em;
             }
         }
     </style>
@@ -115,30 +115,24 @@
     <p class="time">Time: 17:00</p>
     <p class="location">Location: Imperia, Vanadzor</p>
     <p>We can't wait to celebrate with you!</p>
-    <!-- Countdown Timer -->
     <div id="countdown"></div>
 </div>
 
 <script>
-    // Set the wedding date
     var weddingDate = new Date("November 3, 2024 17:00:00").getTime();
 
-    // Update the countdown every second
     var countdown = setInterval(function() {
         var now = new Date().getTime();
         var timeLeft = weddingDate - now;
 
-        // Time calculations
         var days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
         var hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-        // Display the countdown
         document.getElementById("countdown").innerHTML =
             "Time left until the wedding: " + days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
 
-        // If the countdown is finished
         if (timeLeft < 0) {
             clearInterval(countdown);
             document.getElementById("countdown").innerHTML = "The wedding has started!";
