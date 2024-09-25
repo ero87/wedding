@@ -15,8 +15,8 @@
 
         .header {
             background-image: url('https://github.com/ero87/wedding/raw/main/Alen.jpg'); /* Replace with your header image URL */
-            background-size: cover; /* Cover to scale image properly */
-            background-position: center;
+            background-size: cover;
+            background-position: left center; /* Align the image more to the left */
             background-repeat: no-repeat;
             width: 100%;
             height: 300px;
@@ -39,7 +39,8 @@
             border-radius: 10px;
             width: 80%;
             max-width: 600px;
-            margin: -50px auto 20px;
+            margin: 0 auto 20px; /* Remove negative margin to avoid overlapping */
+            margin-top: 30px; /* Space between header and the content */
             box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
         }
 
@@ -79,6 +80,7 @@
             .header {
                 height: 200px; /* Adjust height for smaller screens */
                 padding-top: 100px; /* Adjust padding for mobile */
+                background-position: left center; /* Image aligned left on mobile */
             }
 
             .header h1 {
