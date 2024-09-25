@@ -13,13 +13,16 @@
             text-align: center;
         }
         .header {
-            background-image: url('https://s3.amazonaws.com/images.seroundtable.com/google-rainbow-texture-1491566442.jpg'); /* Replace with your header image URL */
-            background-size: cover;
+            background-image: url('https://github.com/ero87/wedding/raw/main/Alen.jpg'); /* Replace with your header image URL */
+            background-size: auto;
             background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 300px;
             color: white;
-            padding: 100px 20px;
             text-align: center;
             position: relative;
+            padding-top: 150px; /* Move the content further down */
         }
         .header h1 {
             font-size: 3em;
@@ -66,17 +69,17 @@
 </head>
 <body>
 <div class="header">
-    <h1>Jane Doe & John Smith</h1>
+    <h1>ALEN & LIANNA</h1>
     <p>We are getting married!</p>
 </div>
 
 <div class="invitation">
     <p>We are thrilled to invite you to the wedding of</p>
-    <h2>Jane Doe & John Smith</h2>
+    <h2>Alen & Lianna</h2>
     <p>Join us for a celebration of love and unity</p>
-    <p class="date">Date: October 14th, 2024</p>
-    <p class="time">Time: 4:00 PM</p>
-    <p class="location">Location: 123 Wedding Venue Road, City</p>
+    <p class="date">Date: November 3, 2024</p>
+    <p class="time">Time: 17:00</p>
+    <p class="location">Location: Imperia, Vanadzor</p>
     <p>We can't wait to celebrate with you!</p>
     <!-- Countdown Timer -->
     <div id="countdown"></div>
@@ -85,7 +88,7 @@
 
 <script>
     // Set the wedding date
-    var weddingDate = new Date("October 14, 2024 16:00:00").getTime();
+    var weddingDate = new Date("November 3, 2024 17:00:00").getTime();
 
     // Update the countdown every second
     var countdown = setInterval(function() {
