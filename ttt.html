@@ -2823,52 +2823,55 @@
             background-repeat: no-repeat;
         }
 
-        @media screen and (max-width: 1199px) {
+        /* General styles for large screens */
+        @media screen and (min-width: 960px) {
             #rec747465682 .t396__artboard, #rec747465682 .t396__filter, #rec747465682 .t396__carrier {
-            }
-
-            #rec747465682 .t396__filter {
+                height: 600px; /* or whatever height fits best */
             }
 
             #rec747465682 .t396__carrier {
-                background-attachment: scroll;
+                background-size: contain; /* Scale the image while maintaining aspect ratio */
+                background-position: center; /* Keep the image centered */
+                background-color: #f0f0f0; /* Fallback background color */
             }
         }
 
+        /* Styles for medium screens */
         @media screen and (max-width: 959px) {
             #rec747465682 .t396__artboard, #rec747465682 .t396__filter, #rec747465682 .t396__carrier {
-            }
-
-            #rec747465682 .t396__filter {
+                height: 400px; /* Adjust height for medium screens */
             }
 
             #rec747465682 .t396__carrier {
-                background-attachment: scroll;
+                background-size: contain; /* Scale the image to fit inside the container */
+                background-position: center;
+                background-color: #f0f0f0; /* Add background color to fill extra space */
             }
         }
 
+        /* Styles for small screens */
         @media screen and (max-width: 639px) {
             #rec747465682 .t396__artboard, #rec747465682 .t396__filter, #rec747465682 .t396__carrier {
-            }
-
-            #rec747465682 .t396__filter {
+                height: 300px; /* Adjust height for smaller screens */
             }
 
             #rec747465682 .t396__carrier {
-                background-attachment: scroll;
+                background-size: contain; /* Maintain aspect ratio and fit the image */
+                background-position: center;
+                background-color: #f0f0f0; /* Fallback color for any uncovered areas */
             }
         }
 
+        /* Styles for very small screens */
         @media screen and (max-width: 479px) {
             #rec747465682 .t396__artboard, #rec747465682 .t396__filter, #rec747465682 .t396__carrier {
-                height: 620px;
-            }
-
-            #rec747465682 .t396__filter {
+                height: 200px; /* Further reduce height for small mobile screens */
             }
 
             #rec747465682 .t396__carrier {
-                background-attachment: scroll;
+                background-size: contain; /* Maintain aspect ratio for small screens */
+                background-position: center;
+                background-color: #f0f0f0;
             }
         }
 
