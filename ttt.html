@@ -182,7 +182,7 @@
     <script>
         // Countdown script
         function startCountdown() {
-            var weddingDate = new Date("November 3, 2024 17:00:00").getTime();
+            var weddingDate = new Date("November 3, 2024 00:00:00").getTime();
 
             var countdown = setInterval(function () {
                 var now = new Date().getTime();
@@ -193,12 +193,16 @@
                 var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
                 var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-                document.getElementById("countdown").innerHTML =
-                    days + " : " + hours + " : " + minutes + " : " + seconds + " ";
+                // Update countdown numbers
+                document.getElementById("days").innerHTML = days;
+                document.getElementById("hours").innerHTML = hours;
+                document.getElementById("minutes").innerHTML = minutes;
+                document.getElementById("seconds").innerHTML = seconds;
 
                 if (timeLeft < 0) {
                     clearInterval(countdown);
-                    document.getElementById("countdown").innerHTML = "The wedding has started!";
+                    document.getElementById("countdown-numbers").innerHTML = "The wedding has started!";
+                    document.getElementById("countdown-labels").style.display = "none"; // Hide labels when the countdown ends
                 }
             }, 1000);
         }
@@ -4172,13 +4176,25 @@
             }
         }</style>
         <div class="t396">
-            <div style="width: 100%; height: 500px; background-image: url('https://github.com/ero87/wedding/raw/main/Alen.jpg'); background-size: cover; background-position: center center; background-repeat: no-repeat; position: relative; margin-top: -65">
+            <div style="width: 100%; height: 500px; background-image: url('https://github.com/ero87/wedding/raw/main/Alen.jpg'); background-size: cover; background-position: center center; background-repeat: no-repeat; position: relative; margin-top: -65px;">
                 <div style="position: absolute; bottom: 60px; left: 0; right: 0; text-align: center; color: white; font-size: 2em; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);">
                     ALEN &amp; LIANA
                 </div>
-                <div id="countdown"
-                     style="position: absolute; bottom: 20px; left: 0; right: 0; text-align: center; color: white; font-size: 1.5em; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);">
-                    37 : 15 : 42 : 26
+
+                <!-- Countdown Timer -->
+                <div id="countdown-container" style="position: absolute; bottom: 20px; left: 0; right: 0; text-align: center; color: white;">
+                    <div id="countdown-numbers" style="font-size: 2em; display: flex; justify-content: center; gap: 20px; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);">
+                        <span id="days"></span> :
+                        <span id="hours"></span> :
+                        <span id="minutes"></span> :
+                        <span id="seconds"></span>
+                    </div>
+                    <div id="countdown-labels" style="font-size: 1em; display: flex; justify-content: center; gap: 48px;">
+                        <span>Days</span>
+                        <span>Hours</span>
+                        <span>Minutes</span>
+                        <span>Seconds</span>
+                    </div>
                 </div>
             </div>
             <div class="t396__artboard rendered" data-artboard-recid="747465682"
@@ -4266,7 +4282,7 @@
                      data-field-left-res-640-value="59" data-field-left-res-960-value="100000"
                      data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits"
                      data-observer-ready="true"
-                     style="left: 488.5px; top: 230px; width: 523px; transition-duration: 2s;">
+                     style="left: 488.5px; top: 274px; width: 523px; transform: translate3d(0px, 100px, 0px); transition-duration: 2s;">
                     <div class="tn-atom"><img class="tn-atom__img t-img loaded"
                                               data-original="https://github.com/ero87/wedding/raw/main/calendar.jpg"
                                               alt="" imgfield="tn_img_1715598924302"
@@ -4929,7 +4945,7 @@
                      data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
                      data-observer-ready="true"
                      style="top: 397px; left: 149.5px; width: 221px; transform: translate3d(0px, 100px, 0px); transition-duration: 3s;">
-                    <div class="tn-atom" field="tn_text_1650697342770" style="line-height: 28px;">14:30<br>Սուրբ Աստվածածին
+                    <div class="tn-atom" field="tn_text_1650697342770" style="line-height: 28px;">15։00<br>Սուրբ Աստվածածին
                         <br>Եկեղեցի
                     </div>
                 </div>
@@ -4994,7 +5010,7 @@
                      data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
                      data-observer-ready="true"
                      style="top: 399px; left: 877.5px; width: 248px; transform: translate3d(0px, 100px, 0px); transition-duration: 3s;">
-                    <div class="tn-atom" field="tn_text_1673448735263" style="line-height: 28px;">17:00 <br>Իմպերիա
+                    <div class="tn-atom" field="tn_text_1673448735263" style="line-height: 28px;">17.00 <br>Իմպերիա
                         <br>ռեստորան
                     </div>
                 </div>
@@ -6356,7 +6372,7 @@
                      data-observer-ready="true"
                      style="top: 502px; left: 356.5px; width: 244px; transform: scale(0.9); transition-delay: 0.4s; transition-duration: 3s;">
                     <div class="tn-atom" style="line-height: 28px;"><a
-                            href="https://www.google.com/maps/place/40%C2%B050'17.2%22N+44%C2%B026'06.1%22E/@40.8383506,44.4355596,17.75z/data=!4m4!3m3!8m2!3d40.838112!4d44.435029?entry=ttu&amp;g_ep=EgoyMDI0MDkyNC4wIKXMDSoASAFQAw%3D%3D?entry=ttu"
+                            href="https://www.google.com/maps/place/Holy+Mother+of+God+Church/@40.8148669,44.494467,17.25z/data=!4m14!1m7!3m6!1s0x406abcfa28499691:0x2bde14d127166c74!2z0J_Qu9C-0YnQsNC00Ywg0KDQtdGB0L_Rg9Cx0LvQuNC60Lg!8m2!3d40.1776875!4d44.5126406!16s%2Fm%2F02r2t03!3m5!1s0x4041bc11e4353d11:0x960cb61035e3d808!8m2!3d40.8148756!4d44.4957785!16s%2Fm%2F0138whk7?entry=ttu&amp;g_ep=EgoyMDI0MDkyMy4wIKXMDSoASAFQAw%3D%3D?entry=ttu"
                             style="color: inherit">Քարտեզ</a></div>
                 </div>
                 <div class="t396__elem tn-elem tn-elem__7474656871715602911627 t-animate t-animate_started"
@@ -6408,7 +6424,7 @@
                      data-observer-ready="true"
                      style="top: 500px; left: 875.5px; width: 244px; transform: scale(0.9); transition-delay: 0.4s; transition-duration: 3s;">
                     <div class="tn-atom" style="line-height: 28px;"><a
-                            href="https://www.google.com/maps/place/Holy+Mother+of+God+Church/@40.8148669,44.494467,17.25z/data=!4m14!1m7!3m6!1s0x406abcfa28499691:0x2bde14d127166c74!2z0J_Qu9C-0YnQsNC00Ywg0KDQtdGB0L_Rg9Cx0LvQuNC60Lg!8m2!3d40.1776875!4d44.5126406!16s%2Fm%2F02r2t03!3m5!1s0x4041bc11e4353d11:0x960cb61035e3d808!8m2!3d40.8148756!4d44.4957785!16s%2Fm%2F0138whk7?entry=ttu&amp;g_ep=EgoyMDI0MDkyMy4wIKXMDSoASAFQAw%3D%3D?entry=ttu"
+                            href="https://www.google.com/maps/place/40%C2%B050'17.2%22N+44%C2%B026'06.1%22E/@40.8383506,44.4355596,17.75z/data=!4m4!3m3!8m2!3d40.838112!4d44.435029?entry=ttu&amp;g_ep=EgoyMDI0MDkyNC4wIKXMDSoASAFQAw%3D%3D?entry=ttu"
                             style="color: inherit">Քարտեզ</a></div>
                 </div>
                 <div class="t396__elem tn-elem tn-elem__7474656891677665861581"
