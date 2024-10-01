@@ -195,14 +195,13 @@
 
                 // Update countdown numbers
                 document.getElementById("days").innerHTML = days;
-                document.getElementById("hours").innerHTML = hours;
-                document.getElementById("minutes").innerHTML = minutes;
-                document.getElementById("seconds").innerHTML = seconds;
+                document.getElementById("hours").innerHTML = ("0" + hours).slice(-2); // Add leading 0 if needed
+                document.getElementById("minutes").innerHTML = ("0" + minutes).slice(-2); // Add leading 0 if needed
+                document.getElementById("seconds").innerHTML = ("0" + seconds).slice(-2); // Add leading 0 if needed
 
                 if (timeLeft < 0) {
                     clearInterval(countdown);
                     document.getElementById("countdown-numbers").innerHTML = "The wedding has started!";
-                    document.getElementById("countdown-labels").style.display = "none"; // Hide labels when the countdown ends
                 }
             }, 1000);
         }
@@ -4177,23 +4176,31 @@
         }</style>
         <div class="t396">
             <div style="width: 100%; height: 500px; background-image: url('https://github.com/ero87/wedding/raw/main/Alen.jpg'); background-size: cover; background-position: center center; background-repeat: no-repeat; position: relative; margin-top: -65px;">
-                <div style="position: absolute; bottom: 60px; left: 0; right: 0; text-align: center; color: white; font-size: 2em; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);">
+                <div style="position: absolute; bottom: 100px; left: 0; right: 0; text-align: center; color: white; font-size: 2em; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);">
                     ALEN &amp; LIANA
                 </div>
-
                 <!-- Countdown Timer -->
                 <div id="countdown-container" style="position: absolute; bottom: 20px; left: 0; right: 0; text-align: center; color: white;">
-                    <div id="countdown-numbers" style="font-size: 2em; display: flex; justify-content: center; gap: 20px; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);">
-                        <span id="days"></span> :
-                        <span id="hours"></span> :
-                        <span id="minutes"></span> :
-                        <span id="seconds"></span>
-                    </div>
-                    <div id="countdown-labels" style="font-size: 1em; display: flex; justify-content: center; gap: 48px;">
-                        <span>Days</span>
-                        <span>Hours</span>
-                        <span>Minutes</span>
-                        <span>Seconds</span>
+                    <div id="countdown-numbers" style="font-size: 2em; display: flex; justify-content: center; gap: 10px; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);">
+                        <div>
+                            <span id="days"></span>
+                            <div style="font-size: 0.7em;">Days</div>
+                        </div>
+                        <span>:</span>
+                        <div>
+                            <span id="hours"></span>
+                            <div style="font-size: 0.7em;">Hours</div>
+                        </div>
+                        <span>:</span>
+                        <div>
+                            <span id="minutes"></span>
+                            <div style="font-size: 0.7em;">Minutes</div>
+                        </div>
+                        <span>:</span>
+                        <div>
+                            <span id="seconds"></span>
+                            <div style="font-size: 0.7em;">Seconds</div>
+                        </div>
                     </div>
                 </div>
             </div>
